@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="js/check-auth.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>Expense Tracker</h2>
+            <ul class="nav-links">
+                <li><a href="index.html"><button>Transactions</button></a></li>
+                <li><a href="dashboard.html"><button>Dashboard</button></a></li>
+                <li><a href="about.html" class="active"><button>About</button></a></li>
+                <li><button onclick="logout()" class="logout-btn">Logout</button></li>
+            </ul>
+        </div>
+        <div class="user-info">Welcome, <span id="username"></span></div>
+    </nav>
+
+    <div class="container">
+        <h1>About This App</h1>
+        <p>This Personal Expense Tracker is a lightweight, client-side app for tracking income and expenses.
+           It stores data in your browser's Local Storage and provides a dashboard with charts and budget tracking.</p>
+        <h3>Features</h3>
+        <ul>
+            <li>Add income and expense transactions with category, date and notes.</li>
+            <li>View your balance, total income and expenses.</li>
+            <li>Dashboard with charts for category breakdown and trends.</li>
+            <li>Set a monthly budget and track progress.</li>
+        </ul>
+    </div>
+    <script>document.getElementById('username').textContent = sessionStorage.getItem('currentUser');</script>
+</body>
+</html>
